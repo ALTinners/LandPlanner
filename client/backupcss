@@ -1,0 +1,201 @@
+*, *:before, *:after
+{
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body
+{
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+}
+
+/*body
+{
+    background: #FFFFFF;
+
+    color: #cccccc;
+    font-size: 14px;
+    /* Helvetica or Arial-based sans serif stack
+    font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+}*/
+
+#render-target {
+  width: 100%;
+  height: 100%;
+  background: #444444;
+}
+
+.mainContainer {
+    width: inherit;
+    height: inherit;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-start; /* align items in Main Axis */
+    align-items: stretch; /* align items in Cross Axis */
+    align-content: stretch; /* Extra space in Cross Axis */
+
+    background: rgba(255, 255, 255, .1);
+}
+
+.mainHeader {
+    background: rgba(255, 0, 0, .4);
+    padding: 1px;
+}
+
+.mainFooter {
+    background: rgba(0, 255, 0, .4);
+    padding: 1px;
+}
+
+.flexbox-item {
+    padding: 8px;
+}
+.flexbox-item-grow {
+    flex: 1; /* same as flex: 1 1 auto; */
+}
+
+.flexbox-item.content {
+    background: rgba(0, 0, 255, .1);
+}
+
+.fill-area {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: flex-start; /* align items in Main Axis */
+    align-items: stretch; /* align items in Cross Axis */
+    align-content: stretch; /* Extra space in Cross Axis */
+
+}
+
+.fill-area-content {
+    background: rgba(0, 0, 0, .3);
+    border: 1px solid #000000;
+
+    /* Needed for when the area gets squished too far and there is content that can't be displayed */
+    overflow: auto;
+
+}
+
+.andrew-cont {
+  display: flex;
+  flex-flow: row;
+}
+
+.andrew-cont > .mainMenu {
+    margin: 4px;
+    padding: 5px;
+    border: 1px solid #cccc33;
+    border-radius: 7pt;
+    background: #dddd88;
+    flex: 3 1 20%;
+    order: 1;
+}
+
+.andrew-cont > #myMap {
+    margin: 4px;
+    padding: 5px;
+    border: 1px solid #8888bb;
+    border-radius: 7pt;
+    background: #ccccff;
+    flex: 1 6 75%;
+    order: 2;
+}
+
+.andrew-cont > aside {
+    margin: 4px;
+    padding: 5px;
+    border: 1px solid #8888bb;
+    border-radius: 7pt;
+    background: #ccccff;
+    flex: 1 6 10%;
+    order: 3;
+}
+
+/* Too narrow to support three columns */
+@media all and (max-width: 640px) {
+    .andrew-cont {
+        flex-direction: column;
+    }
+
+    .andrew-cont > .mainMenu, .andrew-cont > #myMap, .andrew-cont > aside {
+    /* Return them to document order */
+        order: 0;
+    }
+
+    .andrew-cont > .mainMenu, .andrew-cont > #myMap, header, footer {
+        min-height: 50px;
+        max-height: 50px;
+    }
+}
+
+.topMenuButton {
+  float: top;
+  font-weight: bold;
+  font-size: 1em;
+  margin: 3px;
+  border: none;
+  position: relative;
+  padding:10px;
+  min-width: 100%;
+}
+
+.smallButtonContainer {
+  float: center;
+  position: relative;
+  min-width: 100%;
+}
+
+.smallButtonContainer button {
+  float: center;
+  font-weight: bold;
+  font-size: 9pt;
+  margin: 4px;
+  border: none;
+  position: relative;
+  padding:4px;
+  min-width: 21%;
+}
+
+.mainMap {
+    width:350px;
+    float:left;
+    padding:10px;
+}
+
+li {
+  position: relative;
+  list-style: none;
+  padding: 3px;
+  border-bottom: #eee solid 1px;
+  background: red;
+}
+
+.categoryList div {
+  display: inline-block;
+}
+
+.categoryList > button {
+  display: inline-block;
+  float: right;
+  font-weight: bold;
+  background: green;
+  font-size: 1em;
+  border: none;
+  position: relative;
+  min-width: 10px;
+  min-height: 10px;
+}
+
+.colourCtrl {
+  display: inline-block;
+  float: right;
+}
