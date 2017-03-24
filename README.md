@@ -1,14 +1,23 @@
-LiveWire
+LandPlanner
 =========================
 
-W and S for player 1, Up and down for player 2. 
-Push the ball into the opponents goal for sparkles and winning. 
-Some dependencies don't play nice with webpack 2.0; make sure this is built with 1.14.0
+Built in Meteor with an optional seperate MongoDB instance for home server use. 
+
+Download Meteor 1.4 here https://www.meteor.com/
+
+Optionally, download the latest MongoDB version https://www.mongodb.com/download-center
+
+As per the usual
 
 ```
-npm install -g webpack@1.14.0 webpack-dev-server@1.14.0
-npm install
-webpack-dev-server
+npm install 
 ```
 
-open `http://localhost:8080/index.html`
+If using inbuilt Mongo (Meteor 1.4 is mostly up to date now) then run meteor in the console to build and boot
+
+```
+npm install 
+```
+
+Else, if using BYO Mongo, set up the correct paths for your DB in startMongo.bat and then run. Then update startMeteor.bat to a valid Mongo database URL.
+
