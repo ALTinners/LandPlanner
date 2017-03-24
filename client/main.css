@@ -45,19 +45,6 @@ html, body
     background: rgba(50, 50, 55, 1.0);
 }
 
-.divIcon {
-  /*background: rgba(0, 0, 255, 1.0);*/
-  text-align: center;
-  display: inline-block;
-  white-space:nowrap;
-  font-family: Tahoma, Geneva, sans-serif;
-  text-shadow: 0 0 0.1em black, 0 0 0.1em black,
-          0 0 0.1em black,0 0 0.1em black,0 0 0.1em;
-  color: white;
-  /*min-height: 100px;*/
-  /*min-width: 500px;*/
-}
-
 .flexbox-item {
     padding: 0px;
 }
@@ -268,28 +255,12 @@ ul {
   border: 1px solid rgba(100, 100, 100, 0.2);
   background: rgba(100, 250, 200, 0.5);
   margin: 1px;
-  box-shadow: 1px 1px 4px #555555;
 }
 
 .featureList_selected {
   border: 2px solid rgba(100, 100, 100, 0.5);
   margin: 0px;
   background: rgba(255, 255, 255, 0.4);
-  box-shadow: 3px 3px 4px #555555;
-}
-
-.snapshotBox button {
-  background: rgba(255, 255, 255, 0.6);
-  font-size: 1em;
-  border: 1px solid rgba(100, 100, 100, 0.6);
-  margin: 1px;
-  margin-bottom: 0px;
-  min-width: 10px;
-  border-radius: 3pt;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 #mapTitle {

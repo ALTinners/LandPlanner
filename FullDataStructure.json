@@ -1,0 +1,98 @@
+{
+  "areas": [
+    {
+      "geometry": {
+        /*Standard GEOJSON geometry*/
+      },
+      "properties": {
+        "name": "Name",
+        "type": "Paddock/Water/Etc",
+        "feedRecords": [
+          {
+            "val": 123,
+            "date": "YYYY-MM-DD HH:MM:SS"
+          }
+        ],
+        "images": [
+          {
+            "imgRef": "ref",
+            "date": "YYYY-MM-DD HH:MM:SS",
+          }
+        ]
+      }
+    }
+  ],
+
+  "animals": [
+    {
+      "name": "AnimalName",
+      //Feed and Weight will be one of the 3 systems below
+      "feed1": 123, //Flat number
+      "feed2": {
+        //12 Month cyclical
+        "jan": 123
+      },
+      "feed3": [
+        //Continuous changes
+        {
+          "date": "YYYY-MM-DD",
+          "val": 123,
+        }
+      ],
+      "weight1": 123, //Flat number
+      "weight2": {
+        //12 Month cyclical
+        "jan": 123
+      },
+      "weight3": [
+        //Continuous changes
+        {
+          "date": "YYYY-MM-DD",
+          "val": 123,
+        }
+      ],
+    }
+  ],
+
+  "groups": [
+    {
+      "name": "FlockName",
+      "movements": [
+        {
+          "fromPaddockID": "_id",
+          "toPaddockID": "_id",
+          "date": "YYYY-MM-DD",
+          "animals": [
+            {
+              "groupID": "_id",
+              "animalID": "_id",
+              "number": "123, all, 50%"
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "note": "MultiLine Text",
+          "date": "YYYY-MM-DD HH:MM:SS",
+        }
+      ]
+    }
+  ],
+
+  "changes": [
+    {
+      "name": "Change Name (ie: sale)",
+      "date": "YYYY-MM-DD",
+      "type": "Birth, death, sale, etc",
+      "animals": [
+        {
+          "groupID": "_id",
+          "animalID": "_id",
+          "number": "123, all, 50%"
+        }
+      ]
+    }
+  ]
+
+}

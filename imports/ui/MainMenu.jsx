@@ -130,7 +130,7 @@ class MainMenu extends Component {
       <CategoryList
         key={category._id}  //Unique ID
         features={this.props.features}
-        category={category} //JSON object reping the category
+        category={category} //JSON object rep'ing the category
         selectedCategory={this.props.category}  //Category object that is selected. May be null
         selectedFeature={this.props.feature}
         updateCategoryCallback={this.props.updateCategoryCallback}  //Update for name change, colour and visible bool

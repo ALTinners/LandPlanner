@@ -121,7 +121,7 @@ class MainMap extends Component {
     //Remove the selected feature prop, if it has been deleted
     if ( this.props.feature != null ) {
       for ( feature of featureCollection.features ) {
-        if (_.get(feature, "_id") == _.get(this.props.feature, "_id")) {
+        if ( feature != null && (feature._id == this.props.feature._id) ) {
           this.props.updateFeatureCallback(null);
         }
       }
@@ -154,7 +154,28 @@ class MainMap extends Component {
     }
 
     var leafletObjects = plottableFeatures.map( this.generateLayerForCategory.bind(this) );
-    leafletObjects.push(labellableFeatures.map( this.generateLabelForFeature.bind(this) ));
+    console.log(leafletObjects);
+    // if (labellableFeatures.length > 0) {
+    //   leafletObjects.push( this.generateLabelForFeature(labellableFeatures[0]) );
+    //
+    // }
+    var leafletObjects2 = labellableFeatures.map( this.generateLabelForFeature.bind(this) );
+    console.log(leafletObjects2);
+    if (leafletObjects2.length > 0) {
+      for (var feat of leafletObjects2) {
+        console.log(feat);
+        leafletObjects.push(feat);
+        console.log(leafletObjects);
+      }
+    }
+    console.log(leafletObjects);
+
+    console.log(this.leafletMap);
+    // var myIcon = L.divIcon({className: 'my-div-icon', html: "You wang"});
+    // if (this.leafletMap) {
+    //   myIcon.addTo(this.leafletMap.leafletElement);
+    // }
+
     return leafletObjects;
   }
 
@@ -184,20 +205,15 @@ class MainMap extends Component {
     //We need a random key for Leaflet's id-ing
     var randomKey = Math.floor(Math.random() * 10000) + 1;
 
-    var myIcon = L.divIcon(
-      {
-        html: feature.properties.name,
-        className: "divIcon"
-      }
-    );
+    // var myIcon = L.divIcon({html: "You wang"});
 
     //Need to invert the turf result; its is lnglat, we need latlng
     return (
-      <Marker
+      { /*<Marker
         key={ 'key-' + randomKey }
         icon={myIcon}
         position={turf.centroid(feature).geometry.coordinates.reverse()}
-      />
+      /> */ }
     );
   }
 
